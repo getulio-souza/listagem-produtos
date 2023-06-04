@@ -1,0 +1,67 @@
+.subscribe-modal-background{
+  background-color: #f1f1f1;
+  box-shadow: 1px 2px 3px #d1caca;
+  max-width: 500px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+
+  .subscribe-modal-container{
+    .title-container{
+      font-weight: 900;
+    }
+
+    .subscribe-form-data {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .subscribe-modal-input {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+
+      label {
+        font-size: 15px;
+        padding-bottom: 7px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        height: 20px;
+        margin: 0 auto;
+        border: 1px solid #ded7d7;
+        border-radius: 5px;
+      }
+    }
+
+    .subscribe-btn {
+      padding-top: 20px;
+
+      button {
+        background-color: #fff;
+        color: #2a2a2a;
+        box-shadow: 1px 2px 3px #d1caca;
+        border: none;
+        border: 1px solid #e0d7d7;
+        padding: 10px 20px;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        transition: .3s;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #2a2a2a;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
