@@ -2,7 +2,7 @@
   <h1 class="table-title">Listagem de Produtos</h1>
   <!-- add button -->
   <div class="btn-add">
-    <button>Adicionar</button>
+    <button (click)="openModal()">Adicionar</button>
   </div>
   <table class="table-list">
     <thead class="table-header">
@@ -22,4 +22,50 @@
       </tbody>
     </ng-container>
   </table>
+</section>
+
+<!-- modal -->
+
+<section class="subscribe-modal-background">
+  <form
+    class="subscribe-modal-container"
+    *ngIf="showModal"
+    >
+    <!-- close btn -->
+    <div
+      class="close-modal-btn"
+      (click)="closeModal()"
+      >
+      X
+    </div>
+    <div class="title-container">
+      <h2>Cadastro de produtos</h2>
+    </div>
+    <article class="subscribe-form-data">
+      <!-- name -->
+      <div class="subscribe-modal-input">
+        <label>Nome</label>
+        <input type="text" />
+      </div>
+      <!-- description -->
+      <div class="subscribe-modal-input">
+        <label>Descrição</label>
+        <input type="text" />
+      </div>
+      <!-- price -->
+      <div class="subscribe-modal-input">
+        <label>Valor</label>
+        <input type="number" />
+      </div>
+      <!-- avaliable -->
+      <div class="subscribe-modal-input">
+        <label>Disponível</label>
+        <input type="text" />
+      </div>
+    </article>
+    <!-- button -->
+    <div class="subscribe-btn">
+      <button>Gravar dados</button>
+    </div>
+  </form>
 </section>

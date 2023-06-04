@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 interface items{
   ordenacao: number,
@@ -14,6 +15,10 @@ interface items{
 })
 
 export class TableListComponent implements OnInit {
+
+  @Output() close = new EventEmitter<boolean>();
+
+  showModal: boolean = false
 
   items: items[] = [
     {
@@ -50,4 +55,13 @@ export class TableListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.close.emit(false)
+    this.showModal = false;
+
+  }
 }

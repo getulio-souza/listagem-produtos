@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscribeModalComponent implements OnInit {
 
+  showModal: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

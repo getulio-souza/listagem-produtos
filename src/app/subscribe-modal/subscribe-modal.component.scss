@@ -1,17 +1,16 @@
-.subscribe-modal-background{
-  background-color: #f1f1f1;
-  box-shadow: 1px 2px 3px #d1caca;
-  max-width: 500px;
-  height: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px;
-  border-radius: 10px;
-  z-index: 5;
-
   .subscribe-modal-container{
+    background-color: #f1f1f1;
+    box-shadow: 1px 2px 3px #d1caca;
+    max-width: 500px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 5;
+
     .title-container{
       font-weight: 900;
     }
@@ -65,4 +64,4 @@
     }
   }
 
-}
+
