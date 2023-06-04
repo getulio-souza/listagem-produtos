@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SubscribeModalComponent } from './subscribe-modal/subscribe-modal.component';
+import { TableListComponent } from './table-list/table-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SubscribeModalComponent,
+    TableListComponent
   ],
   imports: [
     BrowserModule,
