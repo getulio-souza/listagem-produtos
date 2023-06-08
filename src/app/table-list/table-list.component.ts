@@ -18,7 +18,8 @@ export class TableListComponent implements OnInit {
 
   @Output() close = new EventEmitter<boolean>();
 
-  showModal: boolean = false
+  showAddModal: boolean = false;
+  showDeleteModal: boolean = false;
 
   items: items[] = [
     {
@@ -56,12 +57,21 @@ export class TableListComponent implements OnInit {
   }
 
   openModal() {
-    this.showModal = true;
+    this.showAddModal = true;
+  }
+
+  openDeleteModal() {
+    this.showDeleteModal = true;
+  }
+
+  closeDeleteModal() {
+    this.close.emit(false);
+    this.showDeleteModal = false;
   }
 
   closeModal() {
     this.close.emit(false)
-    this.showModal = false;
+    this.showAddModal = false;
 
   }
 }

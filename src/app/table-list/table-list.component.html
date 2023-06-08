@@ -3,6 +3,12 @@
   <!-- add button -->
   <div class="btn-add">
     <button (click)="openModal()">Adicionar</button>
+    <select>
+      <optgroup>
+        <option value="">Menor</option>
+        <option value="">Maior</option>
+      </optgroup>
+    </select>
   </div>
   <table class="table-list">
     <thead class="table-header">
@@ -10,6 +16,7 @@
       <th>{{'Nome'}} </th>
       <th>{{'Valor'}} </th>
       <th>{{'Disponível'}}</th>
+      <th>{{'Ações'}}</th>
     </thead>
     <ng-container *ngFor="let item of items">
       <tbody>
@@ -18,18 +25,24 @@
           <td>{{item.name}}</td>
           <td>{{item.valor}}</td>
           <td>{{item.avaliable}}</td>
+          <td>
+            <button
+              class="delete-btn"
+              (click)="openDeleteModal()"
+              >deletar</button>
+          </td>
         </tr>
       </tbody>
     </ng-container>
   </table>
 </section>
 
-<!-- modal -->
+<!-- add modal -->
 
 <section class="subscribe-modal-background">
   <form
     class="subscribe-modal-container"
-    *ngIf="showModal"
+    *ngIf="showAddModal"
     >
     <!-- close btn -->
     <div
@@ -55,12 +68,20 @@
       <!-- price -->
       <div class="subscribe-modal-input">
         <label>Valor</label>
-        <input type="number" />
+        <input
+          type="number"
+          pattern="\d{1,5}" title="Somente números"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+        />
       </div>
       <!-- avaliable -->
       <div class="subscribe-modal-input">
         <label>Disponível</label>
-        <input type="text" />
+        <select name="avaliable" id="avaliable">
+        <option value="0"></option>
+        <option>Sim</option>
+        <option>Não</option>
+        </select>
       </div>
     </article>
     <!-- button -->
@@ -68,4 +89,32 @@
       <button>Gravar dados</button>
     </div>
   </form>
+</section>
+
+<!-- delete modal -->
+<section
+  class="delete-modal-container"
+  *ngIf="showDeleteModal"
+  >
+  <div
+    class="close-delete-btn"
+    (click)="closeDeleteModal()"
+    >x</div>
+  <div class="delete-modal-title-container">
+    <h3>Voce tem certeza que deseja excluir esse item?</h3>
+    <h4>nome do item</h4>
+  </div>
+  <div class="delete-btns-container">
+    <button
+      class="delete-btn delete-btn-confirm"
+    >
+      sim
+    </button>
+    <button
+      class=" delete-btn delete-btn-cancel"
+      onclick="closeBtn()"
+      >
+      não
+    </button>
+  </div>
 </section>

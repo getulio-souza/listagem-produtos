@@ -7,6 +7,7 @@
   .btn-add{
     display: flex;
     justify-content: center;
+    gap: 20px;
     width: 100%;
     background-color: #f1f1f1;
     padding: 10px;
@@ -53,7 +54,20 @@
     }
     tr{
       height: 40px;
-
+      td{
+        .delete-btn{
+          border: none;
+          background-color: red;
+          color: #fff;
+          padding: 10px;
+          border-radius: 7px;
+          cursor: pointer;
+          transition: .3s;
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
     }
   }
 }
@@ -135,6 +149,72 @@
           background-color: #2a2a2a;
           color: #fff;
         }
+      }
+    }
+  }
+
+
+  //delete modal
+
+  .delete-modal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 10;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+
+    .close-delete-btn{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover{
+        color: red;
+      }
+    }
+
+    .delete-modal-title-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h3{
+        text-align: center;
+        max-width: 250px;
+      }
+    }
+    .delete-btns-container{
+      display: flex;
+      gap: 20px;
+      .delete-btn{
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.7;
+        }
+      }
+      .delete-btn-confirm{
+        background-color: green;
+        color: #fff;
+      }
+      .delete-btn-cancel{
+        background-color: red;
+        color: #fff;
       }
     }
   }
