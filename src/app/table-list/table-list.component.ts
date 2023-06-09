@@ -27,13 +27,6 @@ export class TableListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // this.items = [
-    //   {
-    //     productName: this.productName,
-
-    //   },
-
-    // ]
   }
 
   saveData() {
