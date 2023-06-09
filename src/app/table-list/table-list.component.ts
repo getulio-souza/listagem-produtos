@@ -1,12 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
-
-interface items{
-  ordenacao: number,
-  name?: string,
-  valor: number,
-  avaliable?: string
-}
+import { items } from '../model/product'
 
 @Component({
   selector: 'app-table-list',
@@ -21,39 +14,36 @@ export class TableListComponent implements OnInit {
   showAddModal: boolean = false;
   showDeleteModal: boolean = false;
 
-  items: items[] = [
-    {
-    ordenacao:1,
-    name: 'Banana',
-    valor: 40,
-    avaliable: 'sim'
-    },
+  productName: string = "";
+  productDescription: string = "";
+  productValue: any;
+  productAvaliable: boolean = true;
 
-    {
-    ordenacao:2,
-    name: 'Abacaxi',
-    valor: 10,
-    avaliable: 'não'
-    },
-
-    {
-    ordenacao:3,
-    name: 'Kiwi',
-    valor: 50,
-    avaliable: 'não'
-    },
-
-    {
-    ordenacao:4,
-    name: 'Melância',
-    valor: 30,
-    avaliable: 'sim'
-    },
-  ]
+  items: items[] = []
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.items = [
+    //   {
+    //     ordenacao: 1,
+    //     productName: 'banana',
+    //     valor: 20,
+    //     avaliable: true
+    //   }
+    // ]
+  }
+
+  saveData() {
+    this.items.push({
+      productName: this.productName,
+      valor: this.productValue,
+      avaliable: this.productAvaliable,
+    });
+
+    this.productName = "";
+    this.productDescription = "",
+    this.showAddModal = false;
   }
 
   openModal() {
@@ -72,6 +62,5 @@ export class TableListComponent implements OnInit {
   closeModal() {
     this.close.emit(false)
     this.showAddModal = false;
-
   }
 }
