@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { items } from '../model/product'
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-table-list',
@@ -14,6 +15,8 @@ export class TableListComponent implements OnInit {
   showAddModal: boolean = false;
   showDeleteModal: boolean = false;
 
+  productNameModal: string = ""
+
   productName: string = "";
   productDescription: string = "";
   productValue: any;
@@ -26,11 +29,10 @@ export class TableListComponent implements OnInit {
   ngOnInit(): void {
     // this.items = [
     //   {
-    //     ordenacao: 1,
-    //     productName: 'banana',
-    //     valor: 20,
-    //     avaliable: true
-    //   }
+    //     productName: this.productName,
+
+    //   },
+
     // ]
   }
 
@@ -62,5 +64,19 @@ export class TableListComponent implements OnInit {
   closeModal() {
     this.close.emit(false)
     this.showAddModal = false;
+  }
+
+  deleteItem() {
+    this.items = []
+    this.showDeleteModal = false;
+  }
+
+
+  disableSaveBtn() {
+    if (this.productName !== this.productName && this.productDescription !== this.productDescription && this.productValue !== this.productValue) {
+      return false
+    } else {
+      return true
+    }
   }
 }

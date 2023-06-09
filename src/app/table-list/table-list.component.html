@@ -12,7 +12,6 @@
   </div>
   <table class="table-list">
     <thead class="table-header">
-      <th>{{'Ordenação'}}</th>
       <th>{{'Nome'}} </th>
       <th>{{'Valor'}} </th>
       <th>{{'Disponível'}}</th>
@@ -21,7 +20,6 @@
     <ng-container *ngFor="let item of items">
       <tbody>
         <tr class="table-row">
-          <td>{{item.ordenacao}}</td>
           <td>{{item.productName}}</td>
           <td>{{item.valor}}</td>
           <td>{{item.avaliable}}</td>
@@ -64,6 +62,7 @@
           name="name"
           [(ngModel)]="productName"
           [ngModelOptions]="{standalone: true}"
+          required
         />
       </div>
       <!-- description -->
@@ -74,6 +73,7 @@
           name="description"
           [(ngModel)]="productDescription"
           [ngModelOptions]="{standalone: true}"
+          required
         />
       </div>
       <!-- price -->
@@ -85,6 +85,7 @@
           [(ngModel)]="productValue"
           pattern="\d{1,5}" title="Somente números"
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          required
         />
       </div>
       <!-- avaliable -->
@@ -95,6 +96,7 @@
           id="avaliable"
           [(ngModel)]="productAvaliable"
           [ngModelOptions]="{standalone: true}"
+          required
           >
         <option value="0"></option>
         <option>Sim</option>
@@ -103,10 +105,13 @@
       </div>
     </article>
     <!-- button -->
-    <div class="subscribe-btn">
+    <!-- <div class="subscribe-btn"> -->
+      <div>
       <button
-      type="submit"
-      >Gravar dados</button>
+        type="submit"
+        [disabled]="!disableSaveBtn()"
+        >Gravar dados
+      </button>
     </div>
   </form>
 </section>
@@ -122,11 +127,12 @@
     >x</div>
   <div class="delete-modal-title-container">
     <h3>Voce tem certeza que deseja excluir esse item?</h3>
-    <h4>nome do item</h4>
+    <h4>{{productNameModal}}</h4>
   </div>
   <div class="delete-btns-container">
     <button
       class="delete-btn delete-btn-confirm"
+      (click)="deleteItem()"
     >
       sim
     </button>
