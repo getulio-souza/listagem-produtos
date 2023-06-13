@@ -65,6 +65,8 @@ export class TableListComponent implements OnInit {
 
   }
 
+  //order table by name and value
+
   sort(column: keyof items) {
     if (column === this.sortedColumn) {
       this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
