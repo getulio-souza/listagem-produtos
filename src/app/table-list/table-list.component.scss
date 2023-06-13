@@ -4,13 +4,12 @@
   justify-content: center;
   align-items: center;
 
-  .btn-add{
+  .header-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     width: 100%;
     background-color: #f1f1f1;
-    padding: 10px;
     transition: .3s;
     margin-bottom: 40px;
 
@@ -18,19 +17,23 @@
       opacity: 0.9;
     }
 
-    button{
-      border: none;
-      padding: 10px 15px;
-      background-color: #2a2a2a;
-      color: #fff;
-      border-radius: 10px;
-      cursor: pointer;
-      padding-right: 20px;
+    h1{
+      padding-left: 110px;
     }
-  }
 
-  .table-title{
-    padding-bottom: 40px;
+    .add-btn-container{
+      display: flex;
+      align-items: center;
+      padding-right: 110px;
+      button{
+        border: none;
+        padding: 10px 15px;
+        background-color: #2a2a2a;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
   }
 
   .table-list{
@@ -127,7 +130,6 @@
     box-shadow: 1px 2px 3px #d1caca;
     max-width: 500px;
     min-height: fit-content;
-    // height: auto;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -137,7 +139,6 @@
     z-index: 5;
     @media (max-width:900px){
       width: 60%;
-      height: 60%;
     }
 
     .close-modal-btn{
@@ -253,7 +254,7 @@
       display: flex;
       gap: 20px;
 
-      .delete-btn{
+      .default-btn{
         border: none;
         padding: 10px 20px;
         font-size: 15px;

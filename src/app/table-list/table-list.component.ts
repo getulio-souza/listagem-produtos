@@ -32,31 +32,31 @@ export class TableListComponent implements OnInit {
   sortDirection: string = 'asc'
 
   items: items[] = [
-    // {
-    //   productName: 'abacaxi',
-    //   productValue: 10,
-    //   avaliable: false
-    // },
-    // {
-    //   productName: 'mamao',
-    //   productValue: 15,
-    //   avaliable: false
-    // },
-    // {
-    //   productName: 'uva',
-    //   productValue: 30,
-    //   avaliable: false
-    // },
-    // {
-    //   productName: 'laranja',
-    //   productValue: 40,
-    //   avaliable: false
-    // },
-    // {
-    //   productName: 'wiki',
-    //   productValue: 70,
-    //   avaliable: false
-    // },
+    {
+      productName: 'abacaxi',
+      productValue: 10,
+      avaliable: false
+    },
+    {
+      productName: 'mamao',
+      productValue: 15,
+      avaliable: false
+    },
+    {
+      productName: 'uva',
+      productValue: 30,
+      avaliable: false
+    },
+    {
+      productName: 'laranja',
+      productValue: 40,
+      avaliable: false
+    },
+    {
+      productName: 'wiki',
+      productValue: 70,
+      avaliable: false
+    },
   ]
 
   constructor() { }
