@@ -7,11 +7,33 @@
       </div>
     </div>
 
-  <table class="table-list table-sortable">
+  <table
+  class="table-list table-sortable"
+  cellPadding="0"
+  cellSpacing="0"
+  >
     <thead class="table-header">
       <tr>
-        <th (click)="sort('productName')">Nome</th>
-        <th (click)="sort('productValue')">Valor</th>
+        <th (click)="sort('productName')">
+          <!-- arrows-->
+          <span class="arrows-box">
+            <span>Nome</span>
+            <span class="arrows">
+              <span>^</span>
+              <span class="arrow-down">^</span>
+            </span>
+          </span>
+        </th>
+        <th (click)="sort('productValue')">
+          <!-- arrows-->
+          <span class="arrows-box">
+            <span>Nome</span>
+            <span class="arrows">
+              <span>^</span>
+              <span class="arrow-down">^</span>
+            </span>
+          </span>
+        </th>
         <th>Disponível</th>
         <th>{{'Ações'}}</th>
       </tr>
@@ -110,7 +132,7 @@
       </div>
     </article>
     <!-- button -->
-      <div>
+      <div class="save-btn-container">
       <button
         class="save-btn"
         type="submit"

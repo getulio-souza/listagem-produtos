@@ -9,29 +9,34 @@
     justify-content: space-between;
     gap: 20px;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: #76e5b6;
     transition: .3s;
     margin-bottom: 40px;
 
-    &:hover{
-      opacity: 0.9;
-    }
-
     h1{
       padding-left: 110px;
+      color: #fff;
+      text-shadow: 1px 2px 3px #928d8d;
     }
 
     .add-btn-container{
       display: flex;
       align-items: center;
       padding-right: 110px;
+
       button{
         border: none;
         padding: 10px 15px;
-        background-color: #2a2a2a;
-        color: #fff;
+        background-color: #28cd28;
+        color: white;
+        font-weight: bold;
         border-radius: 10px;
         cursor: pointer;
+        transition: .3s;
+        &:hover{
+          background-color: #fff;
+          color: #28cd28;
+        }
       }
     }
   }
@@ -46,6 +51,29 @@
     height: 70px;
     border: 1px solid #2a2a2a;
     background-color: #f1f1f1;
+  }
+
+  //arrow up and down
+
+  .arrows-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .arrows{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .arrow-down{
+      transform: rotate(180deg);
+      position: absolute;
+      top: 5px;
+      pointer-events: none;
+    }
   }
 
   .order-list{
@@ -65,7 +93,7 @@
       background-color: #fff;
     }
     tr{
-      height: 40px;
+      height: 50px;
       td{
 
         .btn-action{
@@ -183,17 +211,16 @@
       }
     }
 
-    .subscribe-btn {
-      padding-top: 20px;
+    .save-btn-container {
+      padding-top: 10px;
 
-      button {
+      .save-btn {
         background-color: #fff;
         color: #2a2a2a;
         box-shadow: 1px 2px 3px #d1caca;
         border: none;
         border: 1px solid #e0d7d7;
         padding: 10px 20px;
-        width: 150px;
         height: 50px;
         cursor: pointer;
         transition: .3s;
