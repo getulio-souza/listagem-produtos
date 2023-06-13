@@ -59,11 +59,7 @@
   </table>
 </section>
 
-<!-- sort table -->
-<script src="/productList/src/app/table-list/sort-table.js"></script>
-
 <!-- add modal -->
-
 <section class="subscribe-modal-background">
   <form
     (submit)="saveData()"
@@ -154,17 +150,16 @@
     >x</div>
   <div class="delete-modal-title-container">
     <h3>Voce tem certeza que deseja excluir esse item?</h3>
-    <h4>{{productNameModal}}</h4>
   </div>
   <div class="delete-btns-container">
     <button
-      class="delete-btn delete-btn-confirm"
+      class="default-btn delete-btn-confirm"
       (click)="deleteItem()"
     >
       sim
     </button>
     <button
-      class=" delete-btn delete-btn-cancel"
+      class=" default-btn delete-btn-cancel"
       (click)="closeDeleteModal()"
       >
       não
