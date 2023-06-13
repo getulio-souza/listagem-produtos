@@ -64,16 +64,33 @@
     tr{
       height: 40px;
       td{
-        .delete-btn{
-          border: none;
-          background-color: red;
-          color: #fff;
-          padding: 10px;
-          border-radius: 7px;
-          cursor: pointer;
-          transition: .3s;
-          &:hover{
-            opacity: 0.5;
+
+        .btn-action{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+
+          .default-btn{
+            border: none;
+            padding: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: .3s;
+            &:hover{
+              opacity: 0.5;
+            }
+          }
+
+          .add-btn{
+            background-color: #2fad78;
+            ;
+            color: #fff;
+          }
+
+          .delete-btn{
+            background-color: #ce3434;
+            color: #fff;
           }
         }
       }
@@ -239,6 +256,7 @@
     .delete-btns-container{
       display: flex;
       gap: 20px;
+
       .delete-btn{
         border: none;
         padding: 10px 20px;
@@ -249,6 +267,7 @@
           opacity: 0.7;
         }
       }
+
       .delete-btn-confirm{
         background-color: green;
         color: #fff;
