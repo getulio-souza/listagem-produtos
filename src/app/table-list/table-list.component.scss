@@ -45,6 +45,15 @@
     background-color: #f1f1f1;
   }
 
+  .order-list{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+
   tbody{
     &:nth-child(odd){
       background-color: #f1f1f1;
@@ -72,13 +81,40 @@
   }
 }
 
+.table-sortable{
+  th{
+    cursor: pointer;
+  }
+
+.th-sort-asc{
+  background-color: rgba(0,0,0,0.1);
+    &::after{
+      content: "\25b4";
+      margin-left: 5px;
+    }
+  }
+
+  .th-sort-desc {
+    background-color: rgba(0,0,0,0.1);
+    &::after {
+      content: "\25be";
+      margin-left: 5px;
+    }
+  }
+}
+
+
+
+//22:34
+
 //modal
 
   .subscribe-modal-container {
     background-color: #f1f1f1;
     box-shadow: 1px 2px 3px #d1caca;
     max-width: 500px;
-    height: auto;
+    min-height: fit-content;
+    // height: auto;
     position: fixed;
     top: 50%;
     left: 50%;

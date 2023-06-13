@@ -3,26 +3,28 @@
   <!-- add button -->
   <div class="btn-add">
     <button (click)="openModal()">Adicionar</button>
-    <select>
+    <!-- <select>
       <optgroup>
         <option value="0">Ordenar</option>
         <option value="1">Menor</option>
         <option value="2">Maior</option>
       </optgroup>
-    </select>
+    </select> -->
   </div>
-  <table class="table-list">
+  <table class="table-list table-sortable">
     <thead class="table-header">
-      <th>{{'Nome'}} </th>
-      <th>{{'Valor'}} </th>
-      <th>{{'Disponível'}}</th>
-      <th>{{'Ações'}}</th>
+      <tr>
+        <th (click)="sort('productName')">Nome</th>
+        <th (click)="sort('productValue')">Valor</th>
+        <th>Disponível</th>
+        <th>{{'Ações'}}</th>
+      </tr>
     </thead>
     <ng-container *ngFor="let item of items">
       <tbody>
         <tr class="table-row">
           <td>{{item.productName}}</td>
-          <td>{{item.valor}}</td>
+          <td>{{item.productValue}}</td>
           <td>{{item.avaliable}}</td>
           <td>
             <button
@@ -35,6 +37,9 @@
     </ng-container>
   </table>
 </section>
+
+<!-- sort table -->
+<script src="/productList/src/app/table-list/sort-table.js"></script>
 
 <!-- add modal -->
 

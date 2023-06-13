@@ -1,6 +1,5 @@
 export class items {
-  ordenacao?: number
   productName?: string
-  valor?: number
+  productValue?: number
   avaliable?: boolean
 }

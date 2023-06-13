@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SubscribeModalComponent } from './subscribe-modal/subscribe-modal.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

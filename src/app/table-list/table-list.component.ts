@@ -1,6 +1,12 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { items } from '../model/product'
-import { FormGroup } from '@angular/forms';
+
+/**
+ *  Sorts a HTML Table
+ * @param {HTMLTableElement} table
+ * @param {number} column
+ * @param {boolean} asc
+ */
 
 @Component({
   selector: 'app-table-list',
@@ -22,17 +28,67 @@ export class TableListComponent implements OnInit {
   productValue: any;
   productAvaliable: boolean = true;
 
-  items: items[] = []
+  sortedColumn: keyof items = 'productName'
+  sortDirection: string = 'asc'
+
+  items: items[] = [
+    {
+      productName: 'abacaxi',
+      productValue: 10,
+      avaliable: false
+    },
+    {
+      productName: 'mamao',
+      productValue: 15,
+      avaliable: false
+    },
+    {
+      productName: 'uva',
+      productValue: 30,
+      avaliable: false
+    },
+    {
+      productName: 'laranja',
+      productValue: 40,
+      avaliable: false
+    },
+    {
+      productName: 'wiki',
+      productValue: 70,
+      avaliable: false
+    },
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  sort(column: keyof items) {
+    if (column === this.sortedColumn) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortedColumn = column;
+      this.sortDirection = 'asc'
+    }
+
+    this.items.sort((a, b) => {
+     const valueA: any = a[column]
+      const valueB: any = b[column];
+
+      if (this.sortDirection === 'asc') {
+        return valueA > valueB ? 1 : -1
+      } else {
+        return valueA < valueB ? 1 : -1
+      }
+    })
   }
 
   saveData() {
     this.items.push({
       productName: this.productName,
-      valor: this.productValue,
+      productValue: this.productValue,
       avaliable: this.productAvaliable,
     });
 
